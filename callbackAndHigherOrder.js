@@ -17,7 +17,7 @@
 // CHECK YOUR ANSWER
 
  multiply(4, 3, answer => {
-   console.log('The answer is ' + answer) //should console.log 12
+   //console.log('The answer is ' + answer) //should console.log 12
  })
 
 
@@ -50,7 +50,7 @@ const first = (arr, cb) => cb(arr[0])
 // CHECK YOUR ANSWER
 
  first(names, firstName => {
-   console.log('The first name in names is ' + firstName)
+   //console.log('The first name in names is ' + firstName)
  })
 
 
@@ -70,7 +70,7 @@ const last = (arr, cb) => cb(arr[arr.length-1])
 // CHECK YOUR ANSWER
 
  last(names, lastName => {
-   console.log('The last name in names is ' + lastName)
+   //console.log('The last name in names is ' + lastName)
  })
 
 
@@ -93,9 +93,9 @@ const contains = (arr, name, cb) => (arr.includes(name)) ? cb(true) : cb(false)
 
  contains(names, 'Colt', result => {
    if(result === true){
-     console.log('Colt is in the array')
+     //console.log('Colt is in the array')
    } else {
-     console.log('Colt is not in the array')
+    // console.log('Colt is not in the array')
    }
  })
 
@@ -159,7 +159,7 @@ const each = (arr, cb) => {
 */
 
 each(names, (item, index) => {
-  console.log(`The item at index ${index} is ${item}`)
+ // console.log(`The item at index ${index} is ${item}`)
 })
 
 
@@ -228,7 +228,7 @@ const getUserById = (users, id, cb) => {
   the two parameters together and return the sum.
 */
 
-// CODE HERE
+const addingFactory = (num) => (y) => y + num
 
 /*
   Now that you have addingFactory, you can create other
@@ -242,8 +242,7 @@ const getUserById = (users, id, cb) => {
   10 as an arguemnt.
 */
 
-// CODE HERE
-
+ const addTen = addingFactory(10);
 /*
   Now the inner function is stored in the addTen variable! 
 
@@ -254,7 +253,8 @@ const getUserById = (users, id, cb) => {
   to see the different outputs.
 */
 
-// CODE HERE
+console.log(addTen(20))
+console.log(addTen(25))
 
 /*
   Let's make another function from the addingFactory. 
@@ -267,4 +267,5 @@ const getUserById = (users, id, cb) => {
   to add any number to your favorite number!
 */
 
-// CODE HERE
+const addFive = addingFactory(5)
+console.log(addFive(15))
